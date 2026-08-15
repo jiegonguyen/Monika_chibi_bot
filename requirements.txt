@@ -1,4 +1,0 @@
-discord.py
-google-genai
-aiofiles
-flask
