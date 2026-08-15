@@ -1,0 +1,18 @@
+# Core dependencies
+discord.py>=2.3.0
+python-dotenv>=1.0.0
+aiohttp>=3.8.0
+requests>=2.31.0
+
+# Optional: Google / Gemini client
+# Tùy vào API/SDK bạn dùng, cài 1 trong các package sau (bỏ comment nếu cần):
+# google-generative-ai>=0.0.0    # (Ví dụ: tên package chính thức phiên bản mới của Google Generative AI SDK — kiểm tra docs chính thức trước khi dùng)
+# google-genai>=0.0.0            # (Một số hướng dẫn/SDK có tên khác; kiểm tra package chính xác theo tài liệu bạn có)
+
+# Optional (if using Google Application Default Credentials)
+# google-auth>=2.20.0
+# google-auth-oauthlib>=0.8.0
+
+# Notes:
+# - Nếu bạn muốn chắc chắn, để trống phần google-* và dùng phần fallback trong code (mô phỏng).
+# - Sau khi xác định chính xác SDK/phiên bản của Gemini bạn có quyền truy cập, uncomment & chỉnh package tương ứng.
