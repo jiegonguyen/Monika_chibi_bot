@@ -1,0 +1,21 @@
+FROM python:3.11-slim
+
+# Install ffmpeg and system libs needed for voice/audio
+RUN apt-get update && \
+    apt-get install -y ffmpeg build-essential libsndfile1 && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy requirements if you have in repo; otherwise create one here
+# If you already have requirements.txt in repo, uncomment the COPY line and remove the RUN cat block.
+COPY requirements.txt /app/
+RUN pip install --upgrade pip setuptools wheel && pip install -r requirements.txt
+
+# Copy bot code
+COPY bot.py /app/
+
+# Expose PORT for health checks (optional)
+EXPOSE 5000
+
+CMD ["python3", "bot.py"]
